@@ -73,8 +73,28 @@ import 'package:flutter_alipay/flutter_alipay.dart';
 
 * 调取支付
 
-```
-var result = await FlutterAlipay.pay("you pay info from server");
+```dart
+// var result = await FlutterAlipay.pay("you pay info from server");
+class PayConstants {
+  static const String ALIPAY_SUCCESS = "9000";
+  static const String ALIPAY_CANCLE = "6001";
+  static const String ALIPAY_ERROR = "4000";
+  static const String ALIPAY_NET_ERROR = "6002";
+}
+
+void aliPay(String sign) async {
+    if (sign == null || sign.length == 0) {
+      return;
+    }
+    FlutterAlipay.pay(sign, sandbox: true).then((payResult) {
+      var _payResult = payResult;
+      print('>>>>>  ${_payResult.toString()}');
+      String payResultStatus = _payResult.resultStatus;
+      print(payResultStatus);
+    }).catchError((e) {
+      // todo
+    });
+  }
 ```
 
 
