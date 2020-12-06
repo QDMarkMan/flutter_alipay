@@ -2,7 +2,7 @@
 
 A flutter plugin to use alipay.
 
-从[flutter_alipay](https://github.com/best-flutter/flutter_alipay)fork, 增加沙箱功能。
+从[flutter_alipay](https://github.com/best-flutter/flutter_alipay)fork, 增加沙箱功能，如果要使用请下载到本地进行调试使用。
 
 
 ## 功能列表
